@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="二次元" />
+		<meta name="keywords" content="约会大作战 第三季" />
+		<meta name="keywords" content="夜刀神十香、五河士道、时崎狂三、五河琴里、四糸乃" />
+		<meta name="keywords" content="二次元、日漫、番剧、游戏、ACG音乐 " />
+		<meta name="keywords" content="日漫、国漫、次元" />
+		<meta name="keywords" content="次元の幻想乡" />
+		<meta name="description" content="ACG爱好者的天地" />
+		<meta name="keywords" content="新番、精品番剧" />
+		<meta name="author" content="丁策" />
+		<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+		<meta http-equiv="X-UA-Compatible" content="chrome=1" />
+		<link rel="shortcut icon" href="../icon/singArthor.png" />
+		<link rel="stylesheet" type="text/css" href="../css/datefighting.css" />
+		<title>欢迎来到次元の幻想乡</title>
+		<script type="text/javascript" src="http://code.jquery.com/jquery-1.8.3.js" charset="utf-8"></script>
+		<script src="../js/jquery.json.min.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript" src="../js/vue.js"></script>
+		<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+	</head>
+
+	<body>
+		<!--页眉-->
+		<header>
+			<section>次元の幻想乡</section>
+		</header>
+		<section id="banner">
+			<img src="../img/girlsindate.jpg"/>
+			<aside>
+				<h1>约会大作战 第三季</h1>
+				<div id="star"></div>
+				<p>CV:岛崎信长，井上麻里奈，富樫美铃，竹达彩奈 </p>
+				<p>四月十日。春假在昨天结束，今天早上就是所谓的开学日。五河士道被可爱的妹妹琴里吵醒后，
+					原本以为今天也会如同往常般度过平凡的一天；直到他遇见一名被称为「精灵」的少女，伴随着一阵突如其来的冲击波，街道就这样消失得无影无踪。
+					在宛如陨石撞击而变成环形山的街道一隅，一名少女正站在坑洞的正中央。
+					「你也是来杀我的吧？」摧毁世界的灾难、充满谜团的怪物、被世界否定的少女。
+					阻止这一切的方法只有两种：歼灭或对话。身穿军服的琴里对士道说：「所以你必须与精灵约会，并且让对方迷恋上你！」
+					新世代「Boy Meet Girls」故事，隆重登场！
+				</p>
+				<button id="playVideo">▲ 立即播放</button>
+			</aside>
+		</section>
+		<article id="comments">
+			<p>评论</p>
+			<div>
+				<textarea v-model="saying"></textarea>
+			</div>
+			<input type="button" value="提交评论 " @click="leaveCom()"/>
+			<ul>
+				<li v-for="item in commentsList"><p>{{item.user}}</p><hr/>{{item.msg}}</li>
+			</ul>
+			<p id="nulMsg" v-show="commentsList.length==0">暂无评论</p>
+		</article>
+		<script type="text/javascript" src="js/jquery.raty.js"></script>
+		<script type="text/javascript" src="../js/dateFighting.js"></script>
+	</body>
+
+</html>

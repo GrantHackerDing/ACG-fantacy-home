@@ -1,0 +1,137 @@
+body,
+header,
+div,
+nav,
+footer,
+aside,
+input {
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	position: relative;
+	margin: 0 auto;
+	background: #6DD5FA url(../img/bodybg.jpg) repeat;
+	margin-top: 5px;
+}
+
+li {
+	list-style: none;
+}
+
+header {
+	display: block;
+	width: 100%;
+	height: 250px;
+	margin: 15px auto;
+	background: url(../img/headerbg.png);
+	font-size: 80px;
+	font-family: "微软雅黑,arial, helvetica, sans-serif";
+	text-align: left;
+	text-decoration: blink;
+	font-weight: bolder;
+	color: #FF4500;
+	border: hidden;
+}
+
+header section {
+	position: absolute;
+	top: 50px;
+	display: block;
+	margin-top: 50px;
+	margin-left: 100px;
+	left: 150px;
+}
+
+#bigUserWrap{
+  position: relative;
+  width: 800px;
+  height: auto;
+  margin: 30px auto;		
+}
+
+#userVeri{
+	width: 800px;
+	height:40px;
+	position: relative;
+	margin: 0 auto;
+	overflow: hidden;
+}
+
+#userVeri>#signIn{
+	width: 398px;
+	height: 40px;
+	background: linear-gradient(to right, #FFF000, #FF0000) !important;
+	*background: yellow;
+	font-size: 22px;
+	color: #FFFDE4;
+	font-weight: bold;
+	text-align: center;
+	line-height: 40px;
+	border: solid #000000 1px;
+	float: left;
+}
+
+#userVeri>#signUp{
+	width: 398px;
+	height: 40px;
+	background: linear-gradient(to right, #FFF000, #FF0000) !important;
+	*background: yellow;
+	font-size: 22px;
+	color: #8E54E9;
+	font-weight: bold;
+	text-align: center;
+	line-height: 40px;
+	border: solid #000000 1px;
+	float: left;
+}
+
+#userVeri>#signIn:hover{
+	cursor: pointer;
+	background: linear-gradient(to right, #FFF000, pink) !important;
+	*background: pink;
+	color: #8E54E9;
+}
+
+#userVeri>#signUp:hover{
+	cursor: pointer;
+	height: 50px;
+	background: linear-gradient(to right, #FFF000, pink) !important;
+	*background: pink;
+	color: #8E54E9;
+}
+
+#bigUserWrap #signInTab{
+	width: 800px;
+	height: 300px;
+	background: url(../img/divbg.jpg) repeat;
+	position: absolute;
+	top:43px;
+	left: 50%;
+	margin-left: -400px;
+	text-align: center;
+}
+
+#bigUserWrap #signInTab input{
+	width: 200px;
+	font-size: 25px;
+	margin: 30px auto 8px auto;
+}
+
+#bigUserWrap #signUpTab{
+	width: 800px;
+	height: 300px;
+	background: url(../img/divbg.jpg) repeat;
+	position: absolute;
+	top:43px;
+	left: 50%;
+	margin-left: -400px;
+	text-align: center;
+}
+
+#bigUserWrap #signUpTab input{
+	width: 200px;
+	font-size: 25px;
+	margin: 30px auto 8px auto;
+}

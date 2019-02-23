@@ -1,0 +1,32 @@
+//1.番剧星级评价
+$('#star').raty();
+//2.评论显示
+new Vue({
+	el:'#comments',
+	data:{
+		commentsList:[
+		{'user':'teemo',
+		'msg':'可还行'},
+		{'user':'glorius',
+		'msg':'后宫番啊'},
+		{'user':'冷夜',
+		'msg':'不如看五等分の花嫁呢'}
+		],
+		saying:''
+	},
+	mount(){
+		
+	},
+	methods:{
+		leaveCom:function(){
+			this.commentsList.unshift({
+				'user':'匿名用户',
+				'msg':this.saying
+			});
+		}
+	}
+});
+//3.视频播放
+$('button#playVideo').on('click',function(){
+	window.location='https://www.bilibili.com/bangumi/play/ss26308';
+});

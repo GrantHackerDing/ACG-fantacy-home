@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="二次元" />
+		<meta name="keywords" content="二次元、日漫、番剧、游戏、ACG音乐 " />
+		<meta name="keywords" content="日漫、国漫、次元" />
+		<meta name="description" content="ACG爱好者的天地" />
+		<meta name="keywords" content="新番、精品番剧" />
+		<meta name="author" content="丁策" />
+		<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+		<meta http-equiv="X-UA-Compatible" content="chrome=1" />
+		<link rel="shortcut icon" href="icon/singArthor.png" />
+		<link rel="stylesheet" type="text/css" href="css/index.css" />
+		<title>欢迎来到次元の幻想乡</title>
+		<!--<script type="text/javascript" src="js/jquery-1.12.4.js"></script>-->
+		<script type="text/javascript">
+			function checkCSupport() {
+				let ct = document.getElementById('myC');
+				if(ct.getContext) {
+					return true;
+				} else {
+					alert('你的浏览器不支持HTML5画布');
+					return false;
+				}
+			}
+
+			function draw() {
+				if(checkCSupport()) {
+					let ct = document.getElementById('myC');
+					let context = ct.getContext('2d');
+					context.translate(200, 20);
+					for(let i = 1; i < 80; i++) {
+						context.translate(30, 30);
+						context.scale(0.95, 0.95);
+						context.rotate(Math.PI / 12);
+						context.beginPath();
+						context.fillStyle = "orangered";
+						context.globalAlpha = "0.4";
+						context.fillRect(0, 0, 50, 50);
+						context.closePath();
+					}
+				}
+			}
+			
+			window.onload=function(){
+				draw();
+			};
+		</script>
+		<script type="text/javascript" src="http://code.jquery.com/jquery-1.8.3.js" charset="utf-8"></script>
+		<script src="js/jquery.json.min.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript" src="js/vue.js"></script>
+		<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+	</head>
+
+	<body>
+		<!--主页页眉-->
+		<header>
+			<section>次元の幻想乡</section>
+		</header>
+		<!--[if IE]>
+			<div class="ieMustDie">
+			 为保证良好的浏览体验，请使用非IE浏览器浏览本站
+		    </div>
+		<![endif]-->
+		
+		<div id="show-area">
+			<!--轮播图-->
+			<div id="picwrap">
+				<div id="innerPicwrap">
+					<ul id="pic">
+						<li><img src="img/love-circu.jpg" />
+							<a href="./html/love-circulation.html" target="_blank">元气满满 | 花泽香菜 恋爱circulation欣赏</a>
+						</li>
+						<li><img src="img/date.jpg" />
+							<a href="html/约会大作战.html" target="_blank">约会大作战 第三季</a>
+						</li>
+						<li><img src="img/arthor.jpg" />
+							<a href="html/nothing.html" target="_blank">叛逆性百万亚瑟王</a>
+						</li>
+						<li><img src="img/snowhair.jpg" />
+							<a href="html/nothing.html" target="_blank">赤发白雪姬</a>
+						</li>
+						<li><img src="img/xiaohongniang.jpg" />
+							<a href="html/nothing.html" target="_blank">狐妖小红娘</a>
+						</li>
+						<li><img src="img/trail.jpg" />
+							<a href="html/nothing.html" target="_blank">游戏 | 英雄传说：空之轨迹</a>
+						</li>
+					</ul>
+				</div>
+				<!--轮播图下的小圆点-->
+				<div id="point">
+					<ul>
+						<li></li>
+						<li></li>
+						<li></li>
+						<li></li>
+						<li></li>
+						<li></li>
+					</ul>
+				</div>
+				<div id="leftB" title="上一个"><img src="img/leftButton.jpg" /></div>
+				<div id="rightB" title="下一个"><img src="img/rightButton.jpg" /></div>
+			</div>
+			<!--登录、注册和分享-->
+			<aside>
+				<div id="search">
+					<input type="search" placeholder="请输入搜索内容或关键词" />
+					<button id="btn"></button>
+					<ul id="searchList"></ul>
+				</div>
+				<canvas id="myC" width="300px" height="450px">你的浏览器不支持画布元素</canvas>
+				<p>次元爱好者的家</p>
+				<span><a href="./html/sign-in-up.html">登录</a> | <a href="./html/sign-in-up.html">注册</a></span>
+				<table id="share">
+					<tr>
+						<td>
+							<a href="https://www.douban.com/share/service" target="_blank"><img src="img/douban.jpg" title="通过豆瓣分享我们" /></a>
+						</td>
+						<td>
+							<a href="http://v.t.sina.com.cn/share/share.php" target="_blank"><img src="img/weibo.jpg" title="通过新浪微博分享我们" /></a>
+						</td>
+						<td>
+							<a href="http://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey" target="_blank"><img src="img/QQzone.jpg" title="通过QQ空间分享我们" /></a>
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<a href="./html/email-subscription.html" target="_blank"><img src="img/email-subs.jpg" title="通过电子邮件订阅我们" /></a>
+						</td>
+						<td>
+							<a href="http://www.facebook.com/sharer/sharer.php" target="_blank"><img src="img/facebook.jpg" title="通过facebook分享我们" /></td>
+						<td>
+							<a href="m.twitter.com/" target="_blank"><img src="img/twitter.jpg" title="通过twitter分享我们" /></td>
+					</tr>
+				</table>
+			</aside>
+
+		</div>
+
+		<div class="clear"></div>
+		<!--番剧、音乐、游戏等功能区-->
+		<nav id="fun">
+			<li class="oprea">番剧</li>
+			<li class="music">音乐</li>
+			<li class="game">游戏</li>
+		</nav>
+		<!--番剧-->
+		<div id="cartoonWrap" class="oprea">
+			<div class="cbox">
+				<div class="cinfo">
+					<div class="cpic"><img src="img/kuangsan.jpg" /></div>
+					<div class="ctitle">
+						<a href="./html/约会大作战.html" target="_blank">约会大作战 第三季</a>
+					</div>
+				</div>
+			</div>
+			<div class="cbox">
+				<div class="cinfo">
+					<div class="cpic"><img src="img/snowwhite.jpg" /></div>
+					<div class="ctitle">
+						<a href="html/nothing.html" target="_blank">赤发白雪姬</a>
+					</div>
+				</div>
+			</div>
+			<div class="cbox">
+				<div class="cinfo">
+					<div class="cpic"><img src="img/foxgirl.jpg" /></div>
+					<div class="ctitle">
+						<a href="html/nothing.html" target="_blank">狐妖小红娘（全）</a>
+					</div>
+				</div>
+			</div>
+			<div class="cbox">
+				<div class="cinfo">
+					<div class="cpic"><img src="img/panni.jpg" /></div>
+					<div class="ctitle">
+						<a href="html/nothing.html" target="_blank">叛逆性百万亚瑟王 </a>
+					</div>
+				</div>
+			</div>
+			<div class="cbox">
+				<div class="cinfo">
+					<div class="cpic"><img src="img/xiamu.jpg" /></div>
+					<div class="ctitle">
+						<a href="html/nothing.html" target="_blank">夏目友人帐</a>
+					</div>
+				</div>
+			</div>
+			<div class="cbox">
+				<div class="cinfo">
+					<div class="cpic"><img src="img/killer.jpg" /></div>
+					<div class="ctitle">
+						<a href="html/nothing.html" target="_blank">哥布林杀手</a>
+					</div>
+				</div>
+			</div>
+			<div class="cbox">
+				<div class="cinfo">
+					<div class="cpic"><img src="img/inuyasa.jpg" /></div>
+					<div class="ctitle">
+						<a href="html/nothing.html" target="_blank">犬夜叉完结篇（1~26）</a>
+					</div>
+				</div>
+			</div>
+			<div class="cbox">
+				<div class="cinfo">
+					<div class="cpic"><img src="img/naruto.jpg" /></div>
+					<div class="ctitle">
+						<a href="html/nothing.html" target="_blank">火隐忍者 博人传</a>
+					</div>
+				</div>
+			</div>
+			<div class="cbox">
+				<div class="cinfo">
+					<div class="cpic"><img src="img/douluo.jpg" /></div>
+					<div class="ctitle">
+						<a href="html/nothing.html" target="_blank">斗罗大陆</a>
+					</div>
+				</div>
+			</div>
+			<div class="cbox">
+				<div class="cinfo">
+					<div class="cpic"><img src="img/newcentr.jpg" /></div>
+					<div class="ctitle">
+						<a href="html/nothing.html" target="_blank">新世纪福音战士</a>
+					</div>
+				</div>
+			</div>
+			<div class="cbox">
+				<div class="cinfo">
+					<div class="cpic"><img src="img/shilaimu.jpg" /></div>
+					<div class="ctitle">
+						<a href="html/nothing.html" target="_blank">转生史莱姆</a>
+					</div>
+				</div>
+			</div>
+			<div class="cbox">
+				<div class="cinfo">
+					<div class="cpic"><img src="img/magiccontent.jpg" /></div>
+					<div class="ctitle">
+						<a href="html/nothing.html" target="_blank">魔法禁书目录</a>
+					</div>
+				</div>
+			</div>
+			<div class="cbox">
+				<div class="cinfo">
+					<div class="cpic"><img src="img/konan.jpg" /></div>
+					<div class="ctitle">
+						<a href="html/nothing.html" target="_blank">名侦探柯南</a>
+					</div>
+				</div>
+			</div>
+			<div class="cbox">
+				<div class="cinfo">
+					<div class="cpic"><img src="img/five-devide-broom.jpg" /></div>
+					<div class="ctitle">
+						<a href="html/nothing.html" target="_blank">五等分的新娘</a>
+					</div>
+				</div>
+			</div>
+			<div class="cbox">
+				<div class="cinfo">
+					<div class="cpic"><img src="img/bengdream.jpg" /></div>
+					<div class="ctitle">
+						<a href="html/nothing.html" target="_blank">BenG Dream</a>
+					</div>
+				</div>
+			</div>
+			<div class="cbox">
+				<div class="cinfo">
+					<div class="cpic"><img src="img/swordland.jpg" /></div>
+					<div class="ctitle">
+						<a href="html/nothing.html" target="_blank">刀剑神域</a>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!--音乐-->
+		<div id="musicWrap" class="music">
+			<div class="mbox" v-for="item in mRecord">
+				<div class="minfo">
+					<div class="mpic"><img :src="item.src"/></div>
+					<div class="mtitle">
+						<a href="#">{{item.title}}</a>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!--游戏-->
+		<div id="gameWrap" class="game">
+			<div class="gbox" v-for="item in gRecord">
+				<div class="ginfo">
+					<div class="gpic"><img :src="item.src" /></div>
+					<div class="gtitle">
+						<a href="#">{{item.title}}</a>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- 页脚-->
+		<footer id="foot">
+			<li>次元の幻想乡©版权所有</li>
+			<li>
+				<a href="html/nothing.html">版权声明</a>
+			</li>
+			<li>
+				<a href="html/nothing.html">联系我们</a>
+			</li>
+			<li>
+				<a href="html/nothing.html">广告合作</a>
+			</li>
+		</footer>
+		<script type="application/javascript" src="js/index.js" charset="UTF-8"></script>
+		<!--<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/chrome-frame/1/CFInstall.min.js"></script>
+		<div id="prompt"></div>
+		<script>
+			window.attachEvent("onload", function() {
+				CFInstall.check({
+					mode: "overlay",
+					node: "prompt"
+				});
+			});
+		</script>-->
+	</body>
+
+</html>
