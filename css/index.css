@@ -360,6 +360,7 @@ table#share tr td:hover {
 	border-radius: 10px;
 	overflow: scroll;
 	background: url(../img/divbg.jpg) repeat;
+	z-index:10000;
 	/*opacity: 0;
 	filter: Alpha(opacity=0);*/
 }
